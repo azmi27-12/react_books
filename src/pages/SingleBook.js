@@ -130,7 +130,7 @@ export default function SingleBook() {
                 <span className="book-data">link :</span>
                   {
                     link !== undefined ? 
-                      <a href = {link}> click here </a>
+                      <a href = {link} target = {'_blank'}> click here </a>
                       :
                       <p >non disponibile</p> 
                   }
