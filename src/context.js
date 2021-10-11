@@ -8,7 +8,7 @@ const AppProvider = ({ children }) => {
   const [searchTerm, setSearchTerm] = useState(' ')
   const [books, setBooks] = useState([])
 
-  const fetchDrinks = useCallback( async () => {
+  const fetchBooks = useCallback( async () => {
     try {
       const response = await fetch(`${url}${searchTerm}`)
       const data = await response.json()
@@ -43,8 +43,8 @@ const AppProvider = ({ children }) => {
     }
   },[searchTerm])
   useEffect(() => {
-    fetchDrinks()
-  }, [searchTerm,fetchDrinks])
+    fetchBooks()
+  }, [searchTerm,fetchBooks])
   return (
     <AppContext.Provider
       value={{  books, searchTerm, setSearchTerm }}
